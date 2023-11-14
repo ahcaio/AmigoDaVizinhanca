@@ -14,18 +14,18 @@ public class LoginActivityTest {
     @Test
     void testaLoginBemSucedido() {
         // Enter correct username and password
-        Espresso.onView(ViewMatchers.withId(R.id.usernameEditText))
-                .perform(ViewActions.typeText("admin"))
-        Espresso.onView(ViewMatchers.withId(R.id.passwordEditText))
-                .perform(ViewActions.typeText("password"))
+        Espresso.onView(ViewMatchers.withId(R.id.edtTextEmailAddress))
+                .perform(ViewActions.typeText("admin"));
+        Espresso.onView(ViewMatchers.withId(R.id.edtTextPassword)
+                .perform(ViewActions.typeText("password")));
 
         // Click the login button
-        Espresso.onView(ViewMatchers.withId(R.id.loginButton))
-                .perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.withId(R.id.btnLogin))
+                .perform(ViewActions.click());
 
         // Check if the login success message is displayed
         Espresso.onView(ViewMatchers.withId(R.id.resultTextView))
-                .check(ViewAssertions.matches(withText("Login successful")))
+                .check(ViewAssertions.matches(withText("Login realizado com sucesso")));
     }
 
 }
