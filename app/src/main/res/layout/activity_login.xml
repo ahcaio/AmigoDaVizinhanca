@@ -35,7 +35,15 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="@string/btnLogin" />
+
+        <EditText
+            android:id="@+id/edtTxtResposta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
 
     </LinearLayout>
 
