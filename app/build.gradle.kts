@@ -38,4 +38,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     //noinspection GradleCompatible
     implementation("com.android.support:cardview-v7:28.0.0")
+    androidTestImplementation("androidx.test:rules:1.4.0")
 }
