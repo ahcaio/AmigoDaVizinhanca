@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="594dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtNome" />
+
+        <EditText
+            android:id="@+id/edtNomeVaga"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="@string/EdtNome"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/txtEndereco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtEndereco" />
+
+        <EditText
+            android:id="@+id/edtEndereco"
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="@string/edtEndereco"
+            android:inputType="textPostalAddress" />
+
+        <TextView
+            android:id="@+id/txtFone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtFone" />
+
+        <EditText
+            android:id="@+id/edtFone"
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:digits="0123456789-()"
+            android:ems="10"
+            android:hint="@string/edtTelefone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:b/>
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtEmail" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="@string/edtEmail"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/txtDescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtDescricao" />
+
+        <EditText
+            android:id="@+id/edtDescricao"
+            android:layout_width="373dp"
+            android:layout_height="82dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:gravity="bottom"
+            android:hint="@string/edtDescricao"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/btnCadastrar" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:animateLayoutChanges="false"
+        android:background="@drawable/toolbar_header">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:text="@string/tituloCadastroDeOportunidade"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/baseline_menu"
+                    android:contentDescription="Menu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/menu"
+                    android:paddingLeft="10dp"
+                    android:text="Amigo da Vizinhança"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="25sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
