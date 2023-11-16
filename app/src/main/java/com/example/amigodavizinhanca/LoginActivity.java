@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText edtTextEmailAddress;
@@ -34,11 +36,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String email = edtTextEmailAddress.getText().toString();
         String password = edtTextPassword.getText().toString();
 
-        if (usuarioTeste == email && passwordTeste == password) {
+        if (Objects.equals(usuarioTeste, email) && Objects.equals(passwordTeste, password)) {
             txtView.setText("Login realizado com sucesso");
-        } else if (usuarioTeste != email && passwordTeste == password) {
+        } else if (!Objects.equals(usuarioTeste, email) && Objects.equals(passwordTeste, password)) {
             txtView.setText("O usuário está incorreto. Favor tentar novamente com outro usuário.");
-        } else if (usuarioTeste == email && passwordTeste != password) {
+        } else if (Objects.equals(usuarioTeste, email) && !Objects.equals(passwordTeste, password)) {
             txtView.setText("A senha está incorreta. Favor tentar novamente.");
         } else {
             txtView.setText("A senha e o usuário estão incorretos. Favor tentar novamente.");
