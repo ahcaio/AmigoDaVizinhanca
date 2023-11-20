@@ -68,8 +68,7 @@
             android:ems="10"
             android:hint="@string/edtTelefone"
             android:inputType="number"
-            android:maxLength="11"
-            android:b/>
+            android:maxLength="11"/>
 
         <TextView
             android:id="@+id/txtEmail"
