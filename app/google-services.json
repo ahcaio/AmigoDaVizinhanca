@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "35174561853",
+    "project_id": "amigo-vizinhanca",
+    "storage_bucket": "amigo-vizinhanca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35174561853:android:16fe341d26b8794d101254",
+        "android_client_info": {
+          "package_name": "com.example.amigodavizinhanca"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBQayS5zCccwdANoT1LENUA3Q75oJ2T1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
