@@ -37,6 +37,10 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("org.hibernate:hibernate-core:5.4.12.Final")
+    implementation ("org.hibernate:hibernate-entitymanager:5.4.12.Final")
+    compileOnly ("org.projectlombok:lombok:1.18.30")
+    annotationProcessor ("org.projectlombok:lombok:1.18.30")
     //noinspection GradleCompatible
 
     implementation("com.android.support:cardview-v7:28.0.0")

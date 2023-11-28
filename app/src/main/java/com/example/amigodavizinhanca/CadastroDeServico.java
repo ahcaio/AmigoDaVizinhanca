@@ -14,6 +14,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+
 import Model.Vaga;
 import bancodedados.VagaDao;
 
@@ -34,9 +36,6 @@ public class CadastroDeServico extends AppCompatActivity implements View.OnClick
 
         btnCadastrarVagas = findViewById(R.id.btnCadastrar);
         btnCadastrarVagas.setOnClickListener(this);
-
-        lstVagas = findViewById(R.id.)
-
 
     }
 
