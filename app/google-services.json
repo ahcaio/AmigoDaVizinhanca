@@ -12,7 +12,20 @@
           "package_name": "com.example.amigodavizinhanca"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "35174561853-hi7i6oddsn4vmfsenetknc45397fddsk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amigodavizinhanca",
+            "certificate_hash": "aaad2e66bee05ad42884534d596d29d28dc7a446"
+          }
+        },
+        {
+          "client_id": "35174561853-j169u3im03g21moc9p5nc6nkb2tavt3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBBQayS5zCccwdANoT1LENUA3Q75oJ2T1A"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35174561853-j169u3im03g21moc9p5nc6nkb2tavt3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
