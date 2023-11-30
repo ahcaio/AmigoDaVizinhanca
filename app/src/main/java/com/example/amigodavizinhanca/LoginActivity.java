@@ -28,6 +28,8 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
+
+    private static final int RC_SIGN_IN = 9001;
     EditText edtTextEmailAddress;
     EditText edtTextPassword;
     Button btnLogin;
@@ -36,18 +38,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        mAuth = FirebaseAuth.getInstance();
+        Intent signInIntent = AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(Arrays.asList(
+                        new AuthUI.IdpConfig.EmailBuilder().build(),
+                        new AuthUI.IdpConfig.GoogleBuilder().build()))
+                .build();
 
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build());
+        signInLauncher.launch(signInIntent);
+//        setContentView(R.layout.activity_login);
+//        startActivityForResult(AuthUI.getInstance()
+//                        .createSignInIntentBuilder()
+//                        .setAvailableProviders(Arrays.asList(
+//                                new AuthUI.IdpConfig.EmailBuilder().build(),
+//                                new AuthUI.IdpConfig.GoogleBuilder().build()))
+//                        .build(),
+//                RC_SIGN_IN);
+//
+//
+//        mAuth = FirebaseAuth.getInstance();
+//
+//        List<AuthUI.IdpConfig> providers = Arrays.asList(
+//                new AuthUI.IdpConfig.EmailBuilder().build(),
+//                new AuthUI.IdpConfig.GoogleBuilder().build());
 
-        edtTextEmailAddress = findViewById(R.id.edtTextEmailAddress);
-        edtTextPassword = findViewById(R.id.edtTextPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this);
-        txtView = findViewById(R.id.edtTxtResposta);
+//        edtTextEmailAddress = findViewById(R.id.edtTextEmailAddress);
+//        edtTextPassword = findViewById(R.id.edtTextPassword);
+//        btnLogin = findViewById(R.id.btnLogin);
+//        btnLogin.setOnClickListener(this);
+//        txtView = findViewById(R.id.edtTxtResposta);
     }
 
     @Override
@@ -62,35 +81,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         signInLauncher.launch(signInIntent);
     }
 
-//        String email = edtTextEmailAddress.getText().toString();
-//        String password = edtTextPassword.getText().toString();
-
-
-//        mAuth.signInWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            Toast.makeText(getApplicationContext(), "Login realizado com sucesso", Toast.LENGTH_LONG).show();
-//                        } else {
-//                            Toast.makeText(getApplicationContext(), "Falha no login", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                });
-//    }
-
 
     private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
             new FirebaseAuthUIActivityResultContract(),
             new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
+                // registra o resultado do login
                 @Override
                 public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-                    onSignInResult(result);
+                    IdpResponse response = result.getIdpResponse();
+                    if (result.getResultCode() == RESULT_OK) {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        Toast.makeText(getApplicationContext(), "Login realizado com sucesso", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Falha no login", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
     );
 
+    // método que liga com o resultado de login, verificando se foi bem-sucedido ou se falhou
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
