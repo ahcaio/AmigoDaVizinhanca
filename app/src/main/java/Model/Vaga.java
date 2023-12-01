@@ -1,27 +1,22 @@
 package Model;
 
-import javax.persistence.*;
-import lombok.Data;
 
 
-@Data
-@Entity
-@Table(name = "VAGA")
+
 public class Vaga {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
 
-    @Column(name = "NOME", nullable = false)
+
     private String nome;
-    @Column(name = "ENDERECO", nullable = false)
+
     private String endereco;
-    @Column(name = "TELEFONE", nullable = false)
+
     private String telefone;
-    @Column(name = "EMAIL", nullable = false)
+
     private String email;
-    @Column(name = "DESCRICAO", nullable = false)
+
     private String descricao;
 
 

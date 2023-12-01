@@ -5,52 +5,76 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.style.MaskFilterSpan;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListAdapter;
-import android.widget.ListView;
+import android.widget.EditText;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.Toast;
 
-import javax.persistence.Entity;
+
+
 
 import Model.Vaga;
 import bancodedados.VagaDao;
 
-public class CadastroDeServico extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class CadastroDeServico extends AppCompatActivity implements View.OnClickListener {
 
-    ListView lstVagas;
+
     Button btnCadastrarVagas;
-
-    List<Vaga> listaVagas = new ArrayList<>();
-    ListAdapter listAdapter;
-    int indice;
+    EditText edtNomeVaga, edtEndereco, edtTelefone, edtEmail, edtDescricao;
     VagaDao dao;
+    String acao;
+    Vaga vaga;
 
+
+
+    public void criarComp(){
+        btnCadastrarVagas = findViewById(R.id.btnCadastrar);
+        btnCadastrarVagas.setOnClickListener(this);
+        btnCadastrarVagas.setText(acao);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_de_servico);
 
-        btnCadastrarVagas = findViewById(R.id.btnCadastrar);
-        btnCadastrarVagas.setOnClickListener(this);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            acao = extras.getString("acao");
+            dao = new VagaDao(this);
+            criarComp();
 
+            if (extras.getSerializable("obj") != null) {
+                vaga = (Vaga) extras.getSerializable("obj");
+                edtNomeVaga.setText(vaga.getNome());
+                edtEndereco.setText(vaga.getEndereco());
+                edtTelefone.setText(vaga.getTelefone());
+                edtEmail.setText(vaga.getEmail());
+                edtDescricao.setText(vaga.getDescricao());
+            }
+        } else {
+            // Handle the case when extras are null
+            // You may want to show an error message or finish the activity
+            Toast.makeText(this, "Extras are null", Toast.LENGTH_SHORT).show();
+            finish(); // Finish the activity
+        }
     }
+
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
+        if (v == btnCadastrarVagas){
+            vaga.setNome(edtNomeVaga.getText().toString());
+            vaga.setEndereco(edtEndereco.getText().toString());
+            vaga.setTelefone(edtTelefone.getText().toString());
+            vaga.setEmail(edtEmail.getText().toString());
+            vaga.setDescricao(edtDescricao.getText().toString());
+        }
+        if (acao.equals("Inserir")){
+            long id = dao.inserir(vaga);
+            Toast.makeText(this, "Vaga" + vaga.getNome() + " foi inserido com o id = " + id,
+                    Toast.LENGTH_LONG).show();
+        }
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
 }
