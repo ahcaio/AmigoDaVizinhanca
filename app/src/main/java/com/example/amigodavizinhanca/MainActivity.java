@@ -1,12 +1,18 @@
 package com.example.amigodavizinhanca;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.logging.Logger;
 
 import Model.Vaga;
 import bancodedados.VagaDao;
@@ -28,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == btnCadastrarVagas) {
+        Log.v(TAG,"Método onClick executado");
+        if (btnCadastrarVagas == v) {
             vaga.setNome(edtNomeVaga.getText().toString());
             vaga.setEndereco(edtEndereco.getText().toString());
             vaga.setTelefone(edtTelefone.getText().toString());
