@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_de_servico);
+        Intent intent = new Intent(MainActivity.this, CadastroDeServico.class);
+        intent.putExtra("obj", vaga);
+        intent.putExtra("dao", dao);
+        startActivity(intent);
         dao = new VagaDao(this);
         vaga = new Vaga();
         btnCadastrarVagas = findViewById(R.id.btnCadastrar);
