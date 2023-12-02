@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_cadastro_de_servico);
         dao = new VagaDao(this);
         vaga = new Vaga();
+        btnCadastrarVagas = findViewById(R.id.btnCadastrar);
+        btnCadastrarVagas.setOnClickListener(this);
     }
 
     @Override
