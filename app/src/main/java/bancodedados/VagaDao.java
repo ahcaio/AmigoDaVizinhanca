@@ -5,12 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import Model.Vaga;
 
-public class VagaDao {
+public class VagaDao implements Serializable {
     private final String TABELA = "vagas";
     private final String[] CAMPOS = {"id", "nome", "endereco", "telefone", "email", "descricao"};
     private Conexao conexao;

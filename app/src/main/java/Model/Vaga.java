@@ -1,9 +1,8 @@
 package Model;
 
+import java.io.Serializable;
 
-
-
-public class Vaga {
+public class Vaga implements Serializable {
 
 
     private Long id;
