@@ -88,8 +88,7 @@ public class CadastroDeServico extends AppCompatActivity implements View.OnClick
         }
         if (acao.equals("Inserir")) {
             long id = dao.inserir(vaga);
-            Toast.makeText(this, "Vaga" + vaga.getNome() + " foi inserido com o id = " + id,
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Vaga" + vaga.getNome() + " foi inserido com o id = " + id, Toast.LENGTH_LONG).show();
         }
     }
 }
