@@ -12,7 +12,7 @@ import Model.Vaga;
 
 public class VagaDao {
     private final String TABELA = "vagas";
-    private final String[] CAMPOS = {"id, nome, endereco, telefone, email, descricao"};
+    private final String[] CAMPOS = {"id", "nome", "endereco", "telefone", "email", "descricao"};
     private Conexao conexao;
     private SQLiteDatabase banco;
 
@@ -35,7 +35,7 @@ public class VagaDao {
 
     public long inserir(Vaga vaga){
         ContentValues values = preencherValores(vaga);
-        return banco.insert(TABELA, null, values);
+        return banco.insertOrThrow(TABELA, null, values);
     }
 
     public long alterar(Vaga vaga){

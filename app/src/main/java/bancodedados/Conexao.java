@@ -1,4 +1,5 @@
 package bancodedados;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -29,6 +30,11 @@ public class Conexao extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_VAGA);
+        Cursor cursor = db.rawQuery("SELECT sql FROM sqlite_master WHERE name='vagas'", null);
+        if (cursor.moveToFirst()) {
+            Log.d("Database", "Create Table Query: " + cursor.getString(0));
+        }
+        cursor.close();
     }
 
     @Override
