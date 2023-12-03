@@ -11,18 +11,18 @@ import java.util.List;
 
 import Model.Vaga;
 
-public class VagaDao implements Serializable {
+public class VagaDao {
     private final String TABELA = "vagas";
     private final String[] CAMPOS = {"id", "nome", "endereco", "telefone", "email", "descricao"};
     private Conexao conexao;
     private SQLiteDatabase banco;
 
-    public VagaDao(Context context){
+    public VagaDao(Context context) {
         conexao = new Conexao(context);
         banco = conexao.getWritableDatabase();
     }
 
-    private ContentValues preencherValores (Vaga vaga){
+    private ContentValues preencherValores(Vaga vaga) {
         ContentValues values = new ContentValues();
 
         values.put("nome", vaga.getNome());
@@ -34,30 +34,31 @@ public class VagaDao implements Serializable {
         return values;
     }
 
-    public long inserir(Vaga vaga){
+    public long inserir(Vaga vaga) {
         ContentValues values = preencherValores(vaga);
         return banco.insertOrThrow(TABELA, null, values);
     }
 
-    public long alterar(Vaga vaga){
+    public long alterar(Vaga vaga) {
         ContentValues values = preencherValores(vaga);
         return banco.update(TABELA,
                 values,
                 "id = ?",
-                new String[] {vaga.getId().toString()});
+                new String[]{vaga.getId().toString()});
     }
-    public long excluir (Vaga vaga){
+
+    public long excluir(Vaga vaga) {
         return banco.delete(TABELA,
                 "id = ?",
-                new String[] {vaga.getId().toString()});
+                new String[]{vaga.getId().toString()});
     }
 
-    public List<Vaga> listar (){
+    public List<Vaga> listar() {
         Cursor c = banco.query(TABELA, CAMPOS, null, null,
-                null, null, null );
+                null, null, null);
 
         List<Vaga> lista = new ArrayList<>();
-        while (c.moveToNext()){
+        while (c.moveToNext()) {
             Vaga vaga = new Vaga();
             vaga.setId(c.getLong(0));
             vaga.setNome(c.getString(1));
