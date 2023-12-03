@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edtEmail = findViewById(R.id.edtEmail);
         edtDescricao = findViewById(R.id.edtDescricao);
 
-        dao = new VagaDao(this);
+//        dao = new VagaDao(this);
         vaga = new Vaga();
         Intent intent = new Intent(MainActivity.this, CadastroDeServico.class);
         intent.putExtra("obj", vaga);
-        intent.putExtra("dao", dao);
+//        intent.putExtra("dao", dao);
         startActivity(intent);
 
         btnCadastrarVagas = findViewById(R.id.btnCadastrar);
