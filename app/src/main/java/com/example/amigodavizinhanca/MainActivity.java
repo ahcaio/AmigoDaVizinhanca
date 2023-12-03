@@ -22,19 +22,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnCadastrarVagas;
     EditText edtNomeVaga, edtEndereco, edtTelefone, edtEmail, edtDescricao;
     VagaDao dao;
-    String acao;
+    String acao = "Inserir";
     Vaga vaga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_de_servico);
+
+        //inicializa as variáves
+        edtNomeVaga = findViewById(R.id.edtNomeVaga);
+        edtEndereco = findViewById(R.id.edtEndereco);
+        edtTelefone = findViewById(R.id.edtFone);
+        edtEmail = findViewById(R.id.edtEmail);
+        edtDescricao = findViewById(R.id.edtDescricao);
+
+        dao = new VagaDao(this);
+        vaga = new Vaga();
         Intent intent = new Intent(MainActivity.this, CadastroDeServico.class);
         intent.putExtra("obj", vaga);
         intent.putExtra("dao", dao);
         startActivity(intent);
-        dao = new VagaDao(this);
-        vaga = new Vaga();
+
         btnCadastrarVagas = findViewById(R.id.btnCadastrar);
         btnCadastrarVagas.setOnClickListener(this);
     }
