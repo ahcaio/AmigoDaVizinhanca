@@ -25,17 +25,16 @@ public class CadastroDeServicoTest {
     public ActivityScenarioRule<CadastroDeServico> activityRule = new ActivityScenarioRule<>(CadastroDeServico.class);
 
     @Test
-    public void testComponentsInitialization() {
-        // Verifica se os componentes da interface do usuário são inicializados corretamente
+    public void testInicializacaoDosComponentes() {
+        // verifica se os componentes da interface do usuário são inicializados corretamente
         onView(withId(R.id.btnCadastrar)).check(matches(isDisplayed()));
         onView(withId(R.id.edtNomeVaga)).check(matches(isDisplayed()));
-        // Adicione verificações para outros elementos conforme necessário
     }
 
     @Test
-    public void testButtonClick() {
+    public void testCliqueNoBotaoCadastrar() {
         // Realiza ações de teste aqui usando Espresso
         onView(withId(R.id.btnCadastrar)).perform(click());
-        // Adicione verificações adicionais conforme necessário
+//        onView(withId(R.id.btnCadastrar)).check()
     }
 }
