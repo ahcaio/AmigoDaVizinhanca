@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class VagaDao {
     public VagaDao(Context context) {
         conexao = new Conexao(context);
         banco = conexao.getWritableDatabase();
+        Log.i("VagaDao", "Banco de dados e tabela criados com sucesso");
     }
 
     private ContentValues preencherValores(Vaga vaga) {
@@ -34,9 +36,19 @@ public class VagaDao {
         return values;
     }
 
+//    public long inserir(Vaga vaga) {
+//        ContentValues values = preencherValores(vaga);
+//        return banco.insertOrThrow(TABELA, null, values);
+//    }
+
     public long inserir(Vaga vaga) {
         ContentValues values = preencherValores(vaga);
-        return banco.insertOrThrow(TABELA, null, values);
+        try {
+            return banco.insertOrThrow(TABELA, null, values);
+        } catch (Exception e) {
+            Log.e("VagaDao", "Erro ao inserir vaga", e);
+            return -1;
+        }
     }
 
     public long alterar(Vaga vaga) {
