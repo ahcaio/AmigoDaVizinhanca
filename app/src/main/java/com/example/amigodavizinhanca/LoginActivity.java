@@ -30,10 +30,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth mAuth;
 
     private static final int RC_SIGN_IN = 9001;
-    EditText edtTextEmailAddress;
-    EditText edtTextPassword;
-    Button btnLogin;
-    TextView txtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,28 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         new AuthUI.IdpConfig.GoogleBuilder().build()))
                 .build();
 
-        signInLauncher.launch(signInIntent);
-//        setContentView(R.layout.activity_login);
-//        startActivityForResult(AuthUI.getInstance()
-//                        .createSignInIntentBuilder()
-//                        .setAvailableProviders(Arrays.asList(
-//                                new AuthUI.IdpConfig.EmailBuilder().build(),
-//                                new AuthUI.IdpConfig.GoogleBuilder().build()))
-//                        .build(),
-//                RC_SIGN_IN);
-//
-//
-//        mAuth = FirebaseAuth.getInstance();
-//
-//        List<AuthUI.IdpConfig> providers = Arrays.asList(
-//                new AuthUI.IdpConfig.EmailBuilder().build(),
-//                new AuthUI.IdpConfig.GoogleBuilder().build());
-
-//        edtTextEmailAddress = findViewById(R.id.edtTextEmailAddress);
-//        edtTextPassword = findViewById(R.id.edtTextPassword);
-//        btnLogin = findViewById(R.id.btnLogin);
-//        btnLogin.setOnClickListener(this);
-//        txtView = findViewById(R.id.edtTxtResposta);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     @Override
@@ -78,35 +53,34 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         new AuthUI.IdpConfig.GoogleBuilder().build()))
                 .build();
 
-        signInLauncher.launch(signInIntent);
+//        signInLauncher.launch(signInIntent);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
-            new FirebaseAuthUIActivityResultContract(),
-            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
-                // registra o resultado do login
-                @Override
-                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-                    IdpResponse response = result.getIdpResponse();
-                    if (result.getResultCode() == RESULT_OK) {
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        Toast.makeText(getApplicationContext(), "Login realizado com sucesso", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Falha no login", Toast.LENGTH_LONG).show();
-                    }
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+
+            if (resultCode == RESULT_OK) {
+                // Login bem-sucedido
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                Toast.makeText(getApplicationContext(), "Login realizado com sucesso", Toast.LENGTH_LONG).show();
+
+                // Redirecionar para a tela inicial do aplicativo
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                // Login falhou
+                if (response != null) {
+                    Toast.makeText(getApplicationContext(), "Falha no login: " + response.getError(), Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Falha no login", Toast.LENGTH_LONG).show();
                 }
             }
-    );
-
-    // método que liga com o resultado de login, verificando se foi bem-sucedido ou se falhou
-    private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
-        IdpResponse response = result.getIdpResponse();
-        if (result.getResultCode() == RESULT_OK) {
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            Toast.makeText(getApplicationContext(), "Login realizado com sucesso", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "Falha no login", Toast.LENGTH_LONG).show();
         }
     }
 }
