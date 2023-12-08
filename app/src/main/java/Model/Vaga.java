@@ -1,32 +1,8 @@
 package Model;
 
-<<<<<<< HEAD
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import java.io.Serializable;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Entity
-public class Vaga {
-
-    @PrimaryKey(autoGenerate = true)
-    private Long id;
-    @ColumnInfo(name = "nome")
-    private String nome;
-    @ColumnInfo(name = "endereco")
-    private String endereco;
-    @ColumnInfo(name = "telefone")
-    private String telefone;
-    @ColumnInfo(name = "email")
-    private String email;
-    @ColumnInfo(name = "descricao")
-=======
-
-public class Vaga {
+public class Vaga implements Serializable {
 
 
     private Long id;
@@ -34,7 +10,7 @@ public class Vaga {
     private String endereco;
     private String telefone;
     private String email;
->>>>>>> 6a8701251760b0cc3970ed578cabaaf917dadf8e
+
     private String descricao;
 
     public Long getId() {
