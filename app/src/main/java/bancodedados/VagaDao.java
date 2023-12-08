@@ -36,20 +36,20 @@ public class VagaDao {
         return values;
     }
 
-//    public long inserir(Vaga vaga) {
-//        ContentValues values = preencherValores(vaga);
-//        return banco.insertOrThrow(TABELA, null, values);
-//    }
-
     public long inserir(Vaga vaga) {
         ContentValues values = preencherValores(vaga);
-        try {
-            return banco.insertOrThrow(TABELA, null, values);
-        } catch (Exception e) {
-            Log.e("VagaDao", "Erro ao inserir vaga", e);
-            return -1;
-        }
+        return banco.insertOrThrow(TABELA, null, values);
     }
+
+//    public long inserir(Vaga vaga) {
+//        ContentValues values = preencherValores(vaga);
+//        try {
+//            return banco.insertOrThrow(TABELA, null, values);
+//        } catch (Exception e) {
+//            Log.e("VagaDao", "Erro ao inserir vaga", e);
+//            return -1;
+//        }
+//    }
 
     public long alterar(Vaga vaga) {
         ContentValues values = preencherValores(vaga);
