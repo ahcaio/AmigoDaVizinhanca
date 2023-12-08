@@ -12,17 +12,12 @@ import lombok.ToString;
 @Entity
 public class Vaga {
 
-    @PrimaryKey(autoGenerate = true)
+
     private Long id;
-    @ColumnInfo(name = "nome")
     private String nome;
-    @ColumnInfo(name = "endereco")
     private String endereco;
-    @ColumnInfo(name = "telefone")
     private String telefone;
-    @ColumnInfo(name = "email")
     private String email;
-    @ColumnInfo(name = "descricao")
     private String descricao;
 
     public Long getId() {
