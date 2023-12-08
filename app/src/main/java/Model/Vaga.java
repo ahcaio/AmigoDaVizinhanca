@@ -1,23 +1,41 @@
 package Model;
 
-import java.io.Serializable;
+<<<<<<< HEAD
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public class Vaga implements Serializable {
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+public class Vaga {
+
+    @PrimaryKey(autoGenerate = true)
+    private Long id;
+    @ColumnInfo(name = "nome")
+    private String nome;
+    @ColumnInfo(name = "endereco")
+    private String endereco;
+    @ColumnInfo(name = "telefone")
+    private String telefone;
+    @ColumnInfo(name = "email")
+    private String email;
+    @ColumnInfo(name = "descricao")
+=======
+
+public class Vaga {
 
 
     private Long id;
-
-
     private String nome;
-
     private String endereco;
-
     private String telefone;
-
     private String email;
-
+>>>>>>> 6a8701251760b0cc3970ed578cabaaf917dadf8e
     private String descricao;
-
 
     public Long getId() {
         return id;
@@ -69,12 +87,13 @@ public class Vaga implements Serializable {
 
     @Override
     public String toString() {
-        return "Vaga" +
+        return "Vaga{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", email='" + email + '\'' +
-                ", descricao='" + descricao + '\'';
+                ", descricao='" + descricao + '\'' +
+                '}';
     }
 }
