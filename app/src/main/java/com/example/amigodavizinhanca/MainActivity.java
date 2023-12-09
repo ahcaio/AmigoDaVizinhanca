@@ -32,17 +32,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_cadastro_pf);
+        setContentView(R.layout.activity_cadastro_pj);
         Intent intent = new Intent(MainActivity.this, CadastroPF.class);
-        edtNome = (EditText) findViewById(R.id.edtNome);
-        edtEmail = (EditText) findViewById(R.id.edtEmail);
-        edtCPF = (EditText) findViewById(R.id.edtCPF);
-        edtCEP = (EditText) findViewById(R.id.edtCEP);
-        edtLogradouro = (EditText) findViewById(R.id.edtLogradouro);
-        edtLocalidade = (EditText) findViewById(R.id.edtLocalidade);
-        edtUF = (EditText) findViewById(R.id.edtUF);
-        edtNumero = (EditText) findViewById(R.id.edtNumero);
-        edtComplemento = (EditText) findViewById(R.id.edtComplemento);
+//        edtNome = (EditText) findViewById(R.id.edtNome);
+//        edtEmail = (EditText) findViewById(R.id.edtEmail);
+//        edtCPF = (EditText) findViewById(R.id.edtCPF);
+//        edtCEP = (EditText) findViewById(R.id.edtCEP);
+//        edtLogradouro = (EditText) findViewById(R.id.edtLogradouro);
+//        edtLocalidade = (EditText) findViewById(R.id.edtLocalidade);
+//        edtUF = (EditText) findViewById(R.id.edtUF);
+//        edtNumero = (EditText) findViewById(R.id.edtNumero);
+//        edtComplemento = (EditText) findViewById(R.id.edtComplemento);
 
     }
     public void ClickSalvar (View view){
