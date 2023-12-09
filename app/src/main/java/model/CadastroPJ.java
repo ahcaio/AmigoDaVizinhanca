@@ -1,4 +1,4 @@
-package com.example.amigodavizinhanca.activity;
+package model;
 
 import androidx.appcompat.app.AppCompatActivity;
 

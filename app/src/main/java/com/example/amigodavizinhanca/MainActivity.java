@@ -1,4 +1,4 @@
-package com.example.amigodavizinhanca.activity;
+package com.example.amigodavizinhanca;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.amigodavizinhanca.CadastroPF;
-import com.example.amigodavizinhanca.R;
+import model.CadastroPF;
 
 public class MainActivity extends AppCompatActivity {
 

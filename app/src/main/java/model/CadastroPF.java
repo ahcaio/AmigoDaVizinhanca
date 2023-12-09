@@ -1,8 +1,10 @@
-package com.example.amigodavizinhanca;
+package model;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.amigodavizinhanca.R;
 
 public class CadastroPF extends AppCompatActivity {
 

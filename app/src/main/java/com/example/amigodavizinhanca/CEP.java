@@ -1,4 +1,4 @@
-package com.example.amigodavizinhanca.activity;
+package com.example.amigodavizinhanca;
 
 public class CEP {
     private String cep;
