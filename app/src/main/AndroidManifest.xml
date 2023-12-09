@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+git com<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -13,10 +13,10 @@
         android:theme="@style/Theme.AmigoDaVizinhanca"
         tools:targetApi="31">
         <activity
-            android:name=".activity.CadastroPJ"
+            android:name="model.CadastroPJ"
             android:exported="false" />
         <activity
-            android:name=".CadastroPF"
+            android:name="model.CadastroPF"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
