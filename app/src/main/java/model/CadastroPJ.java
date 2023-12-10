@@ -2,6 +2,7 @@ package model;
 
 public class CadastroPJ {
 
+    private Long id;
     private String razaoSocial;
     private String email;
     private String cpnj;
@@ -12,7 +13,8 @@ public class CadastroPJ {
     private String numero;
     private String complemento;
 
-    public CadastroPJ(String razaoSocial, String email, String cpnj, String cep, String logradouro, String localidade, String uf, String numero, String complemento) {
+    public CadastroPJ(Long id, String razaoSocial, String email, String cpnj, String cep, String logradouro, String localidade, String uf, String numero, String complemento) {
+        this.id = id;
         this.razaoSocial = razaoSocial;
         this.email = email;
         this.cpnj = cpnj;
@@ -22,6 +24,17 @@ public class CadastroPJ {
         this.uf = uf;
         this.numero = numero;
         this.complemento = complemento;
+    }
+
+    public CadastroPJ() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getRazaoSocial() {
@@ -99,7 +112,8 @@ public class CadastroPJ {
     @Override
     public String toString() {
         return "CadastroPJ{" +
-                "razaoSocial='" + razaoSocial + '\'' +
+                "id=" + id +
+                ", razaoSocial='" + razaoSocial + '\'' +
                 ", email='" + email + '\'' +
                 ", cpnj='" + cpnj + '\'' +
                 ", cep='" + cep + '\'' +
