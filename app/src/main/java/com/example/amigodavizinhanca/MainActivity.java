@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import model.CadastroPF;
-
 public class MainActivity extends AppCompatActivity {
 
     private EditText edtNome;
@@ -32,17 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_cadastro_pj);
-        Intent intent = new Intent(MainActivity.this, CadastroPF.class);
-//        edtNome = (EditText) findViewById(R.id.edtNome);
-//        edtEmail = (EditText) findViewById(R.id.edtEmail);
-//        edtCPF = (EditText) findViewById(R.id.edtCPF);
-//        edtCEP = (EditText) findViewById(R.id.edtCEP);
-//        edtLogradouro = (EditText) findViewById(R.id.edtLogradouro);
-//        edtLocalidade = (EditText) findViewById(R.id.edtLocalidade);
-//        edtUF = (EditText) findViewById(R.id.edtUF);
-//        edtNumero = (EditText) findViewById(R.id.edtNumero);
-//        edtComplemento = (EditText) findViewById(R.id.edtComplemento);
-
+        Intent intent = new Intent(MainActivity.this, AtvCadastroPF.class);
     }
     public void ClickSalvar (View view){
         Toast.makeText(MainActivity.this,"Cadastro Realizado",Toast.LENGTH_LONG).show();

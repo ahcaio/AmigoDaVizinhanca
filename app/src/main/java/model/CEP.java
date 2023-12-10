@@ -1,4 +1,4 @@
-package com.example.amigodavizinhanca;
+package model;
 
 public class CEP {
     private String cep;
