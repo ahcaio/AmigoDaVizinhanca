@@ -29,7 +29,6 @@ public class AtvCadastroPJIntegrationTest extends TestCase {
     @Test
     public void testaPreencherCamposDoCadastroPJEClicarNoBotaoCadastrar() {
         // Etapa 1: Simular o cadastro de uma empresa PJ
-//        onView(withId(R.id.button_cadastrar_empresa)).perform(click());
         onView(withId(R.id.edtRazaoSocial)).perform(replaceText("Instituição teste"));
         onView(withId(R.id.edtEmail)).perform(typeText("teste@gmail.com"));
         onView(withId(R.id.edtCNPJ)).perform(typeText("1234567890-0001/00"));
@@ -42,10 +41,22 @@ public class AtvCadastroPJIntegrationTest extends TestCase {
 
         onView(withId(R.id.btnCadastrarPj)).perform(click());
 
-        // Etapa 2: Verificar se a empresa está sendo exibida na ListView
-//        onData(allOf(is(instanceOf(SeuModeloDeEmpresa.class)), withProperty("razaoSocial", is("Nome da Empresa"))))
-//                .inAdapterView(withId(R.id.listView_empresas))
-//                .check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testaCadastroDePessoaJuridica() {
+        // Etapa 1: Simular o cadastro de uma empresa PJ
+        onView(withId(R.id.edtRazaoSocial)).perform(replaceText("Instituição teste"));
+        onView(withId(R.id.edtEmail)).perform(typeText("teste@gmail.com"));
+        onView(withId(R.id.edtCNPJ)).perform(typeText("1234567890-0001/00"));
+        onView(withId(R.id.edtCEP)).perform(typeText("74290-045"));
+        onView(withId(R.id.edtLogradouro)).perform(typeText("Avenida teste"));
+        onView(withId(R.id.edtLocalidade)).perform(replaceText("Goiânia"));
+        onView(withId(R.id.edtUF)).perform(replaceText("Goiás"));
+        onView(withId(R.id.edtNumero)).perform(typeText("1000"));
+        onView(withId(R.id.edtComplemento)).perform(typeText("Casa 2"));
+
+        onView(withId(R.id.btnCadastrarPj)).perform(click());
     }
 
 }
