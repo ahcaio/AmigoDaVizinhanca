@@ -1,12 +1,10 @@
-package model;
+package com.example.amigodavizinhanca;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.amigodavizinhanca.R;
-
-public class CadastroPJ extends AppCompatActivity {
+public class AtvCadastroPJ extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
