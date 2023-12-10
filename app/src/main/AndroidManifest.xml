@@ -13,10 +13,10 @@
         android:theme="@style/Theme.AmigoDaVizinhanca"
         tools:targetApi="31">
         <activity
-            android:name="model.CadastroPJ"
+            android:name=".AtvCadastroPJ"
             android:exported="false" />
         <activity
-            android:name="model.CadastroPF"
+            android:name=".AtvCadastroPF"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

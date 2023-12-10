@@ -8,25 +8,23 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:background="@drawable/toolbar_header"/>
-
-
+        android:layout_height="84dp"
+        android:background="@drawable/toolbar_header" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:gravity="center"
         android:orientation="vertical"
-        tools:context="model.CadastroPJ">
+        tools:context=".AtvCadastroPJ">
 
 
         <EditText
-            android:id="@+id/edtNome"
+            android:id="@+id/edtRazaoSocial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="text"
@@ -39,11 +37,11 @@
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
             android:ems="10"
-            android:inputType="text"
             android:hint="@string/email"
-            tools:ignore="TextFields"
-            android:autofillHints="emailAddress" />
+            android:inputType="text"
+            tools:ignore="TextFields" />
 
 
         <EditText
@@ -60,19 +58,19 @@
             android:id="@+id/edtCEP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="String"
             android:ems="10"
             android:hint="@string/cep"
-            android:inputType="textPostalAddress"
-            android:autofillHints="String" />
+            android:inputType="textPostalAddress" />
 
         <EditText
             android:id="@+id/edtLogradouro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="String"
             android:ems="10"
-            android:inputType="text"
             android:hint="@string/logradouro"
-            android:autofillHints="String" />
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/edtLocalidade"
@@ -87,10 +85,10 @@
             android:id="@+id/edtUF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="String"
             android:ems="10"
-            android:inputType="text"
             android:hint="@string/uf"
-            android:autofillHints="String" />
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/edtNumero"
@@ -105,16 +103,16 @@
             android:id="@+id/edtComplemento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="text"
             android:ems="10"
-            android:inputType="text"
             android:hint="@string/complemento"
-            android:autofillHints="text" />
+            android:inputType="text" />
 
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastrar"
-            android:onClick="ClickSalvar"/>
+            android:onClick="ClickSalvar"
+            android:text="Cadastrar" />
     </LinearLayout>
 </LinearLayout>
