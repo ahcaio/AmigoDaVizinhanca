@@ -16,7 +16,7 @@ public class CadastroPjDao {
 
     private final String TABELA = "cadastro_pj";
     private final String[] CAMPOS = {"id", "razao_social", "email", "cnpj", "cep", "logradouro",
-            "localidade", "uf", "numero", "complemento";
+            "localidade", "uf", "numero", "complemento"};
     private Conexao conexao;
     private SQLiteDatabase banco;
 
