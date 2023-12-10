@@ -6,9 +6,9 @@
     <string name="logradouro">Logradouro</string>
     <string name="localidade">Localidade</string>
     <string name="uf">UF</string>
-    <string name="n_mero">Número</string>
+    <string name="número">Número</string>
     <string name="complemento">Complemento</string>
-    <string name="cadastrar">Cadastrar</string>
+    <string name="btnCadastrarPj">Cadastrar</string>
     <string name="nome">Razão Social</string>
     <string name="numero">Número</string>
     <string name="cpf">CPF</string>
