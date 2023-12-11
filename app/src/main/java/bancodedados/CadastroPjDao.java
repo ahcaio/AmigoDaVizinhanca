@@ -37,14 +37,14 @@ public class CadastroPjDao {
         values.put("localidade", cadastroPj.getLocalidade());
         values.put("uf", cadastroPj.getUf());
         values.put("numero", cadastroPj.getNumero());
-        values.put("complement", cadastroPj.getComplemento());
+        values.put("complemento", cadastroPj.getComplemento());
 
         return values;
     }
 
     public long inserir(CadastroPJ cadastroPJ) {
         ContentValues values = preencherValores(cadastroPJ);
-        return banco.insertOrThrow(TABELA, null, values);
+        return banco.insert(TABELA, null, values);
     }
 
     public long alterar(CadastroPJ cadastroPJ) {
@@ -69,14 +69,15 @@ public class CadastroPjDao {
         while (c.moveToNext()) {
             CadastroPJ cadastroPJ = new CadastroPJ();
             cadastroPJ.setId(c.getLong(0));
-            cadastroPJ.setEmail(c.getString(1));
-            cadastroPJ.setCpnj(c.getString(2));
-            cadastroPJ.setCep(c.getString(3));
-            cadastroPJ.setLogradouro(c.getString(4));
-            cadastroPJ.setLocalidade(c.getString(5));
-            cadastroPJ.setUf(c.getString(6));
-            cadastroPJ.setNumero(c.getString(7));
-            cadastroPJ.setComplemento(c.getString(8));
+            cadastroPJ.setRazaoSocial(c.getString(1));
+            cadastroPJ.setEmail(c.getString(2));
+            cadastroPJ.setCpnj(c.getString(3));
+            cadastroPJ.setCep(c.getString(4));
+            cadastroPJ.setLogradouro(c.getString(5));
+            cadastroPJ.setLocalidade(c.getString(6));
+            cadastroPJ.setUf(c.getString(7));
+            cadastroPJ.setNumero(c.getString(8));
+            cadastroPJ.setComplemento(c.getString(9));
             lista.add(cadastroPJ);
         }
         return lista;
