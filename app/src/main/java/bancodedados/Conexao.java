@@ -17,6 +17,7 @@ public class Conexao extends SQLiteOpenHelper {
     private static final String SQL_CREATE_VAGA = "create table cadastro_pj ( "
             + "id integer PRIMARY KEY AUTOINCREMENT,"
             + "razao_social VARCHAR(100), "
+            + "email VARCHAR(100), "
             + "cnpj VARCHAR(200), "
             + "cep VARCHAR(20), "
             + "logradouro VARCHAR(50), "
