@@ -6,6 +6,7 @@ import androidx.test.core.app.ApplicationProvider;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -75,7 +76,7 @@ public class CadastroPjDaoTest extends TestCase {
     @Test
     public void testaExcluirPessoaJuridica() {
         // inicializa o objeto
-        CadastroPJ cadastroPJTeste2 = new CadastroPJ();
+        CadastroPJ cadastroPJTeste = new CadastroPJ();
         cadastroPJTeste.setRazaoSocial("Instituição 1");
         cadastroPJTeste.setCpnj("1223178237287312");
         cadastroPJTeste.setEmail("admin@gmail.com");
@@ -88,7 +89,7 @@ public class CadastroPjDaoTest extends TestCase {
         cadastroPjDao.inserir(cadastroPJTeste);
         cadastroPjDao.excluir(cadastroPJTeste);
         List<CadastroPJ> empresasNoBanco = cadastroPjDao.listar();
-        assertNull(empresasNoBanco);
+        assert (empresasNoBanco.isEmpty());
     }
 }
 
