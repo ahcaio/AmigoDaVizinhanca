@@ -31,7 +31,7 @@ public class CadastroPjDaoTest extends TestCase {
         CadastroPJ cadastroPJTeste = new CadastroPJ();
         cadastroPJTeste.setRazaoSocial("Instituição 1");
         cadastroPJTeste.setCpnj("1223178237287312");
-        cadastroPJTeste.setEmail("admin@mgmail.com");
+        cadastroPJTeste.setEmail("admin@gmail.com");
         cadastroPJTeste.setCep("74290-045");
         cadastroPJTeste.setLogradouro("Avenida teste");
         cadastroPJTeste.setLocalidade("Goiânia");
@@ -58,7 +58,7 @@ public class CadastroPjDaoTest extends TestCase {
         assert cadastroPjDoBanco.getCpnj().equals("1223178237287312");
         assert cadastroPjDoBanco.getEmail().equals("admin@gmail.com");
         assert cadastroPjDoBanco.getCep().equals("74290-045");
-        assert cadastroPjDoBanco.getCep().equals("74290-045");
+//        assert cadastroPjDoBanco.getCep().equals("74290-045");
     }
 }
 
