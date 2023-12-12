@@ -102,17 +102,19 @@
                         android:orientation="vertical"
                         android:padding="16dp">
                         <ImageButton
+                            android:id="@+id/btnVagas"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/edit"
+                            android:layout_marginLeft="8dp"
+                            android:src="@drawable/vaga"
                             android:background="@android:color/transparent"
-                            android:contentDescription="Editar"/>
+                            android:contentDescription="Vagas"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Editar"
+                            android:text="Vagas"
                             android:textColor="@color/textColor"
                             android:textSize="18sp"/>
                     </LinearLayout>
@@ -166,7 +168,7 @@
                         <ImageButton
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/play"
+                            android:src="@drawable/cadastro"
                             android:background="@android:color/transparent"
                             android:contentDescription="Play"/>
 
@@ -174,7 +176,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Play"
+                            android:text="Cadastro"
                             android:textColor="@color/textColor"
                             android:textSize="18sp"/>
                     </LinearLayout>
