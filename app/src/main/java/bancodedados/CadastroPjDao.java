@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
@@ -55,10 +56,13 @@ public class CadastroPjDao {
                 new String[]{cadastroPJ.getId().toString()});
     }
 
-    public long excluir(CadastroPJ cadastroPJ) {
-        return banco.delete(TABELA,
-                "id = ?",
-                new String[]{cadastroPJ.getId().toString()});
+    public void excluir(CadastroPJ cadastroPJ) {
+        Long id = cadastroPJ.getId();
+        if (id != null) {
+            banco.delete(TABELA,
+                    "id = ?",
+                    new String[]{cadastroPJ.getId().toString()});
+        }
     }
 
     public List<CadastroPJ> listar() {
@@ -81,5 +85,15 @@ public class CadastroPjDao {
             lista.add(cadastroPJ);
         }
         return lista;
+    }
+
+    public void limparDados() {
+        getWritableDatabase().execSQL("DELETE FROM " + TABELA);
+        getWritableDatabase().close();
+    }
+
+    private SQLiteDatabase getWritableDatabase() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db;
     }
 }

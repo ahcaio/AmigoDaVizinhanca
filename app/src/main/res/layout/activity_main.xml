@@ -192,17 +192,18 @@
                         android:orientation="vertical"
                         android:padding="16dp">
                         <ImageButton
+                            android:id="@+id/btnSobre"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/setting"
+                            android:src="@drawable/information"
                             android:background="@android:color/transparent"
-                            android:contentDescription="Configuração"/>
+                            android:contentDescription="Sobre"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Configuração"
+                            android:text="Sobre"
                             android:textColor="@color/textColor"
                             android:textSize="18sp"/>
                     </LinearLayout>
@@ -222,6 +223,7 @@
                         android:orientation="vertical"
                         android:padding="16dp">
                         <ImageButton
+                            android:id="@+id/btnSair"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:src="@drawable/logout"
@@ -231,7 +233,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Logout"
+                            android:text="Sair"
                             android:textColor="@color/textColor"
                             android:textSize="18sp"/>
                     </LinearLayout>
