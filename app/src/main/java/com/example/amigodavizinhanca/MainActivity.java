@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     ImageButton btnSobre;
     ImageButton btnSair;
 
@@ -37,3 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+
+
+
