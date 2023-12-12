@@ -1,28 +1,17 @@
 package com.example.amigodavizinhanca;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.logging.Logger;
-
-import Model.Vaga;
+import model.Vaga;
 import bancodedados.VagaDao;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,20 +21,6 @@ public class MainActivity extends AppCompatActivity {
     String acao = "Inserir";
     Vaga vaga;
 
-    private EditText edtNome;
-    private EditText edtEmail;
-    private EditText edtCPF;
-
-    private EditText edtCEP;
-    private EditText edtLogradouro;
-
-    private EditText edtLocalidade;
-
-    private EditText edtUF;
-
-    private EditText edtNumero;
-
-    private EditText edtComplemento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_cadastro_pj);
-        Intent intent = new Intent(MainActivity.this, AtvCadastroPF.class);
     }
     public void ClickSalvar (View view){
         Toast.makeText(MainActivity.this,"Cadastro Realizado",Toast.LENGTH_LONG).show();
