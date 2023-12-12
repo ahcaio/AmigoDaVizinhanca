@@ -30,4 +30,7 @@
     <string name="nome">Razão Social</string>
     <string name="numero">Número</string>
     <string name="cpf">CPF</string>
+    <string name="txtRazaoSocial">Razão Social</string>
+    <string name="EdtRazaoSocial">Digite aqui razão social da instituição</string>
+    <string name="tituloCadastroDeInstituicao">Cadastro de Instituição</string>
 </resources>
