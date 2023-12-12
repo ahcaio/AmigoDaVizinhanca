@@ -1,15 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AmigoDaVizinhanca</string>
-    <string name="email">Email</string>
-    <string name="CNPJ">CNPJ</string>
-    <string name="cep">CEP</string>
-    <string name="logradouro">Logradouro</string>
-    <string name="localidade">Localidade</string>
-    <string name="uf">UF</string>
-    <string name="número">Número</string>
-    <string name="complemento">Complemento</string>
+    <string name="tituloCadastroDeInstituicao">Cadastro de Instituição</string>
+    <string name="txtRazaoSocial">Razão Social</string>
+    <string name="EdtRazaoSocial">Digite aqui razão social da instituição</string>
+    <string name="txtCnpj">CNPJ</string>
+    <string name="edtEndereco">Digite aqui o endereço da oportunidade</string>
+    <string name="txtFone">Telefone</string>
+    <string name="edtTelefone">Digite aqui o Telefone</string>
+    <string name="txtEmail">Email</string>
+    <string name="edtEmail">Digite aqui o Email</string>
+    <string name="txtDescricao">Descrição</string>
+    <string name="edtDescricao">Digite aqui a descrição da oportunidade</string>
     <string name="btnCadastrarPj">Cadastrar</string>
-    <string name="nome">Razão Social</string>
-    <string name="numero">Número</string>
-    <string name="cpf">CPF</string>
+    <string name="btnEditar">Editar</string>
+
 </resources>
+
+<!--<resources>-->
+<!--    <string name="app_name">AmigoDaVizinhanca</string>-->
+<!--    <string name="email">Email</string>-->
+<!--    <string name="CNPJ">CNPJ</string>-->
+<!--    <string name="cep">CEP</string>-->
+<!--    <string name="logradouro">Logradouro</string>-->
+<!--    <string name="localidade">Localidade</string>-->
+<!--    <string name="uf">UF</string>-->
+<!--    <string name="número">Número</string>-->
+<!--    <string name="complemento">Complemento</string>-->
+<!--    <string name="btnCadastrarPj">Cadastrar</string>-->
+<!--    <string name="nome">Razão Social</string>-->
+<!--    <string name="numero">Número</string>-->
+<!--    <string name="cpf">CPF</string>-->
+<!--</resources>-->
