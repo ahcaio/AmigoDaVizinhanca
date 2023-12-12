@@ -8,8 +8,8 @@
         <shape
             android:shape="oval">
             <gradient
-                android:startColor="@color/colorToolbarStart"
-                android:endColor="@color/colorToolbarEnd"
+                android:startColor="@color/design_default_color_secondary_variant"
+                android:endColor="@color/design_default_color_secondary"
                 android:angle="90">
             </gradient>
         </shape>

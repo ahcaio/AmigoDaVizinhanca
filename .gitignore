@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/misc.xml
+app/src/main/java/com/example/amigodavizinhanca/AtvCadastroPF.java
+app/src/main/res/layout/activity_cadastro_pf.xml
+
+
+/.idea/androidTestResultsUserPreferences.xml
+/.idea/shelf/
