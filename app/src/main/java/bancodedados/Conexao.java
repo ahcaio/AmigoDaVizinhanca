@@ -31,7 +31,7 @@ public class Conexao extends SQLiteOpenHelper {
             + "descricao text );";
 
 
-    private static final String SQL_CREATE_VAGA = "create table cadastro_pj ( "
+    public static final String SQL_CREATE_PJ = "create table cadastro_pj ( "
             + "id integer PRIMARY KEY AUTOINCREMENT,"
             + "razao_social VARCHAR(100), "
             + "email VARCHAR(100), "
@@ -52,6 +52,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(SQL_CREATE_PJ);
         db.execSQL(SQL_CREATE_VAGA);
 
 //        Cursor cursor = db.rawQuery("SELECT sql FROM sqlite_master WHERE name='vagas'", null);
@@ -59,7 +60,6 @@ public class Conexao extends SQLiteOpenHelper {
 //            Log.d("Database", "Create Table Query: " + cursor.getString(0));
 //        }
 //        cursor.close();
-
     }
 
     @Override
