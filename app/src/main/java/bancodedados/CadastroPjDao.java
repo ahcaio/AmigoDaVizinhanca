@@ -55,10 +55,13 @@ public class CadastroPjDao {
                 new String[]{cadastroPJ.getId().toString()});
     }
 
-    public long excluir(CadastroPJ cadastroPJ) {
-        return banco.delete(TABELA,
-                "id = ?",
-                new String[]{cadastroPJ.getId().toString()});
+    public void excluir(CadastroPJ cadastroPJ) {
+        Long id = cadastroPJ.getId();
+        if (id != null) {
+            banco.delete(TABELA,
+                    "id = ?",
+                    new String[]{cadastroPJ.getId().toString()});
+        }
     }
 
     public List<CadastroPJ> listar() {
