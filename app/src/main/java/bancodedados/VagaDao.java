@@ -6,11 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Vaga;
+import model.Vaga;
 
 public class VagaDao {
     private final String TABELA = "vagas";

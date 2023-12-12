@@ -1,12 +1,9 @@
 package com.example.amigodavizinhanca;
 
-import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.typeText;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import static org.hamcrest.CoreMatchers.allOf;
@@ -29,7 +26,7 @@ public class AtvCadastroPJIntegrationTest extends TestCase {
     @Test
     public void testaPreencherCamposDoCadastroPJEClicarNoBotaoCadastrar() {
         // Etapa 1: Simular o cadastro de uma empresa PJ
-        onView(withId(R.id.edtRazaoSocial)).perform(replaceText("Instituição teste"));
+        onView(withId(R.id.edtNomeVaga)).perform(replaceText("Instituição teste"));
         onView(withId(R.id.edtEmail)).perform(typeText("teste@gmail.com"));
         onView(withId(R.id.edtCNPJ)).perform(typeText("1234567890-0001/00"));
         onView(withId(R.id.edtCEP)).perform(typeText("74290-045"));
@@ -46,7 +43,7 @@ public class AtvCadastroPJIntegrationTest extends TestCase {
     @Test
     public void testaCadastroDePessoaJuridica() {
         // Etapa 1: Simular o cadastro de uma empresa PJ
-        onView(withId(R.id.edtRazaoSocial)).perform(replaceText("Instituição teste"));
+        onView(withId(R.id.edtNomeVaga)).perform(replaceText("Instituição teste"));
         onView(withId(R.id.edtEmail)).perform(typeText("teste@gmail.com"));
         onView(withId(R.id.edtCNPJ)).perform(typeText("1234567890-0001/00"));
         onView(withId(R.id.edtCEP)).perform(typeText("74290-045"));
