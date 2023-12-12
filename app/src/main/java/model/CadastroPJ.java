@@ -1,6 +1,8 @@
 package model;
 
-public class CadastroPJ {
+import java.io.Serializable;
+
+public class CadastroPJ implements Serializable {
 
     private Long id;
     private String razaoSocial;

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import bancodedados.CadastroPjDao;
+import model.CadastroPJ;
 import model.Vaga;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ImageButton btnSobre, btnSair, btnAddVaga, btnVagas, btnCadastroPj;
     Vaga vaga;
-
+    CadastroPJ cadastroPJ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +52,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if (v == btnCadastroPj) {
+            cadastroPJ = new CadastroPJ();
             // Crie um Intent para iniciar a nova atividade
             Intent intent = new Intent(MainActivity.this, AtvCadastroPJ.class);
+            intent.putExtra("acao", cadastroPJ);
             // Inicie a nova atividade
             startActivity(intent);
         }
