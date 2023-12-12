@@ -14,7 +14,7 @@ public class Conexao extends SQLiteOpenHelper {
     // Versão do banco de dados
     private static final int DATABASE_VERSION = 1;
 
-    private static final String SQL_CREATE_VAGA = "create table cadastro_pj ( "
+    public static final String SQL_CREATE_PJ = "create table cadastro_pj ( "
             + "id integer PRIMARY KEY AUTOINCREMENT,"
             + "razao_social VARCHAR(100), "
             + "email VARCHAR(100), "
@@ -35,7 +35,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_VAGA);
+        db.execSQL(SQL_CREATE_PJ);
     }
 
     @Override
