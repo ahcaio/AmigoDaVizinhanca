@@ -71,10 +71,13 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-                        <ImageView
+                        <ImageButton
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/profile"/>
+                            android:src="@drawable/profile"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="Perfil"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -98,10 +101,13 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-                        <ImageView
+                        <ImageButton
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/edit"/>
+                            android:src="@drawable/edit"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="Editar"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -125,10 +131,13 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-                        <ImageView
+                        <ImageButton
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/library"/>
+                            android:src="@drawable/library"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="Biblioteca"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -152,10 +161,13 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-                        <ImageView
+                        <ImageButton
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/play"/>
+                            android:src="@drawable/play"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="Play"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -179,10 +191,13 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-                        <ImageView
+                        <ImageButton
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/setting"/>
+                            android:src="@drawable/setting"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="Configuração"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -206,10 +221,12 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-                        <ImageView
+                        <ImageButton
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/logout"/>
+                            android:src="@drawable/logout"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="Logout"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
