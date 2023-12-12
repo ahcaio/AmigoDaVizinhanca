@@ -13,13 +13,13 @@
         android:theme="@style/Theme.AmigoDaVizinhanca"
         tools:targetApi="31">
         <activity
-            android:name=".activity.CadastroPJ"
+            android:name=".AtvCadastroPJ"
             android:exported="false" />
         <activity
-            android:name=".CadastroPF"
+            android:name=".AtvCadastroPF"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
