@@ -37,10 +37,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-<<<<<<< HEAD
-        //noinspection GradleCompatible
-=======
->>>>>>> 6a8701251760b0cc3970ed578cabaaf917dadf8e
 
     implementation("com.android.support:cardview-v7:28.0.0")
 }

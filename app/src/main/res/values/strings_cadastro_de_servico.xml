@@ -12,5 +12,6 @@
     <string name="txtDescricao">Descrição</string>
     <string name="edtDescricao">Digite aqui a descrição da oportunidade</string>
     <string name="btnCadastrar">Cadastrar</string>
+    <string name="btnEditar">Editar</string>
 
 </resources>

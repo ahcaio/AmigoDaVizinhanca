@@ -21,7 +21,7 @@ import Model.Vaga;
 import bancodedados.VagaDao;
 
 public class CadastroDeServico extends AppCompatActivity implements View.OnClickListener {
-    Button btnCadastrarVagas;
+    Button btnCadastrarVagas, btnEditarVaga;
     EditText edtNomeVaga, edtEndereco, edtTelefone, edtEmail, edtDescricao;
     VagaDao dao;
     String acao;
@@ -36,6 +36,8 @@ public class CadastroDeServico extends AppCompatActivity implements View.OnClick
         dao = new VagaDao(this);
         btnCadastrarVagas = findViewById(R.id.btnCadastrar);
         btnCadastrarVagas.setOnClickListener(this);
+        btnEditarVaga = findViewById(R.id.btnEditar);
+        btnEditarVaga.setOnClickListener(this);
         edtNomeVaga = findViewById(R.id.edtNomeVaga);
         edtEndereco = findViewById(R.id.edtEndereco);
         edtTelefone = findViewById(R.id.edtFone);
@@ -56,19 +58,68 @@ public class CadastroDeServico extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        String mensagemErro = validaCampos();
         if (v == btnCadastrarVagas){
-            vaga.setNome(edtNomeVaga.getText().toString());
-            vaga.setEndereco(edtEndereco.getText().toString());
-            vaga.setTelefone(edtTelefone.getText().toString());
-            vaga.setEmail(edtEmail.getText().toString());
-            vaga.setDescricao(edtDescricao.getText().toString());
-            long id = dao.inserir(vaga);
-            Toast.makeText(this, "Vaga" + vaga.getId() + "foi inserido com sucesso",
-                    Toast.LENGTH_LONG).show();
+            if (mensagemErro == null){
+                vaga.setNome(edtNomeVaga.getText().toString());
+                vaga.setEndereco(edtEndereco.getText().toString());
+                vaga.setTelefone(edtTelefone.getText().toString());
+                vaga.setEmail(edtEmail.getText().toString());
+                vaga.setDescricao(edtDescricao.getText().toString());
+                long id = dao.inserir(vaga);
+                Toast.makeText(this, "Vaga " + id + " foi inserido com sucesso",
+                        Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(this, ListaVagas.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, mensagemErro, Toast.LENGTH_SHORT).show();
+            }
         }
 
-    }
+        if (v == btnEditarVaga){
+            if (mensagemErro == null) {
+                vaga.setNome(edtNomeVaga.getText().toString());
+                vaga.setEndereco(edtEndereco.getText().toString());
+                vaga.setTelefone(edtTelefone.getText().toString());
+                vaga.setEmail(edtEmail.getText().toString());
+                vaga.setDescricao(edtDescricao.getText().toString());
+                long id = dao.alterar(vaga);
+                    Toast.makeText(this, "Vaga foi alterada com sucesso",
+                            Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, ListaVagas.class);
+                    startActivity(intent);
 
+            }else {
+                Toast.makeText(this, mensagemErro, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private String validaCampos() {
+        StringBuilder mensagensErro = new StringBuilder();
+
+        if (edtNomeVaga.getText().toString().isEmpty()) {
+            mensagensErro.append("Campo Nome da Vaga é obrigatório\n");
+        }
+        if (edtEndereco.getText().toString().isEmpty()) {
+            mensagensErro.append("Campo Endereço é obrigatório\n");
+        }
+        if (edtTelefone.getText().toString().isEmpty()) {
+            mensagensErro.append("Campo Telefone é obrigatório\n");
+        }
+        if (edtEmail.getText().toString().isEmpty()) {
+            mensagensErro.append("Campo Email é obrigatório\n");
+        }
+        if (edtDescricao.getText().toString().isEmpty()) {
+            mensagensErro.append("Campo Descrição é obrigatório\n");
+        }
+
+        if (mensagensErro.length() == 0) {
+            return null; // Não há mensagens de erro
+        } else {
+            return mensagensErro.toString(); // Retorna as mensagens de erro acumuladas
+        }
+    }
 }
 
 

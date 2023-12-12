@@ -1,20 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ListaVagas">
+    android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/listagemDeVagas"
+    <!-- Adicionando a imagem no canto superior esquerdo com espaçamento -->
+
+
+    <!-- Adicionando o texto "Perfil" na frente da imagem -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="356dp" />
+        android:layout_height="110dp">
 
-    <Button
-        android:id="@+id/btnCadastrar"
+        <ImageView
+            android:id="@+id/imagePerfil"
+            android:layout_width="79dp"
+            android:layout_height="97dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
+            android:padding="8dp"
+            android:src="@drawable/profileavatar"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Perfil"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="49dp"
+            android:layout_marginEnd="177dp"
+            android:layout_marginBottom="48dp"
+            android:fontFamily="@font/roboto"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="Amigo da Vizinhança"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePerfil"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
-</LinearLayout>
+        android:layout_below="@id/imagePerfil"
+        android:layout_marginTop="121dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:ignore="NotSibling">
+
+        <!-- Seu conteúdo existente -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto"
+            android:text="Vagas Cadastradas"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/listagemDeVagas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/botaoCadastrar" />
+
+    </LinearLayout>
+</RelativeLayout>

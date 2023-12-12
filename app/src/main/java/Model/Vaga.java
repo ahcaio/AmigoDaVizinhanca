@@ -63,13 +63,12 @@ public class Vaga implements Serializable {
 
     @Override
     public String toString() {
-        return "Vaga{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", email='" + email + '\'' +
-                ", descricao='" + descricao + '\'' +
-                '}';
+        return "Vaga:" +
+                "id: " + id +
+                ", nome: '" + nome + '\'' +
+                ", endereco: '" + endereco + '\'' +
+                ", telefone: '" + telefone + '\'' +
+                ", email: '" + email + '\'' +
+                ", descricao: '" + descricao + '\'';
     }
 }

@@ -9,9 +9,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="594dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
-        android:layout_marginTop="1dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
         <TextView
@@ -24,13 +24,18 @@
 
         <EditText
             android:id="@+id/edtNomeVaga"
-            android:layout_width="366dp"
+            android:layout_width="333sp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25sp"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="@string/EdtNome"
-            android:inputType="text" />
+            android:inputType="textMultiLine"
+            android:lines="1"
+            android:maxLines="5"
+            android:scrollbars="vertical"
+
+            />
 
         <TextView
             android:id="@+id/txtEndereco"
@@ -42,7 +47,7 @@
 
         <EditText
             android:id="@+id/edtEndereco"
-            android:layout_width="367dp"
+            android:layout_width="333sp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"
@@ -60,7 +65,7 @@
 
         <EditText
             android:id="@+id/edtFone"
-            android:layout_width="367dp"
+            android:layout_width="333sp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"
@@ -68,7 +73,7 @@
             android:ems="10"
             android:hint="@string/edtTelefone"
             android:inputType="number"
-            android:maxLength="11"/>
+            android:maxLength="11" />
 
         <TextView
             android:id="@+id/txtEmail"
@@ -80,7 +85,7 @@
 
         <EditText
             android:id="@+id/edtEmail"
-            android:layout_width="369dp"
+            android:layout_width="333sp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"
@@ -98,30 +103,49 @@
 
         <EditText
             android:id="@+id/edtDescricao"
-            android:layout_width="373dp"
+            android:layout_width="333sp"
             android:layout_height="82dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:gravity="bottom"
             android:hint="@string/edtDescricao"
-            android:inputType="text" />
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:maxLines="5"
+            android:scrollbars="vertical" />
 
-        <Button
-            android:id="@+id/btnCadastrar"
-            android:layout_width="303dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/btnCadastrar" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <Button
+                android:id="@+id/btnCadastrar"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginBottom="48dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/btnCadastrar" />
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="47dp"
+                android:layout_marginBottom="48dp"
+                android:text="@string/btnEditar" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="136dp"
         android:animateLayoutChanges="false"
         android:background="@drawable/toolbar_header">
 
@@ -147,24 +171,19 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:id="@+id/menu"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/baseline_menu"
-                    android:contentDescription="Menu" />
+                android:layout_marginTop="20dp"
+                android:foregroundGravity="center"
+                android:gravity="center">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/menu"
+                    android:layout_width="329dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:paddingLeft="10dp"
                     android:text="Amigo da Vizinhança"
                     android:textColor="@color/colorWhite"

@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import Model.Vaga;
 import bancodedados.VagaDao;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     Button btnCadastrarVagas;
     EditText edtNomeVaga, edtEndereco, edtTelefone, edtEmail, edtDescricao;
     VagaDao dao;
@@ -44,24 +44,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        intent.putExtra("dao", dao);
         startActivity(intent);
 
-        btnCadastrarVagas = findViewById(R.id.btnCadastrar);
-        btnCadastrarVagas.setOnClickListener(this);
+//        btnCadastrarVagas = findViewById(R.id.btnCadastrar);
+//        btnCadastrarVagas.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View v) {
-        Log.v(TAG,"Método onClick executado");
-        if (btnCadastrarVagas == v) {
-            vaga.setNome(edtNomeVaga.getText().toString());
-            vaga.setEndereco(edtEndereco.getText().toString());
-            vaga.setTelefone(edtTelefone.getText().toString());
-            vaga.setEmail(edtEmail.getText().toString());
-            vaga.setDescricao(edtDescricao.getText().toString());
-        }
-        if (acao.equals("Inserir")) {
-            long id = dao.inserir(vaga);
-            Toast.makeText(this, "Vaga" + vaga.getNome() + " foi inserido com o id = " + id,
-                    Toast.LENGTH_LONG).show();
-        }
-    }
 }
+
+
+
