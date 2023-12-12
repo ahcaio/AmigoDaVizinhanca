@@ -38,6 +38,13 @@
                     android:textSize="25sp"
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorWhite"/>
+                <androidx.appcompat.widget.SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/menu"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/background"/>
             </RelativeLayout>
             <ScrollView
                 android:layout_width="match_parent"
@@ -52,13 +59,55 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginTop="80dp"
+                            android:paddingLeft="10dp"
+                            android:text="Sobre nós"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_marginTop="110dp"
+                            android:paddingLeft="10dp"
+                            android:text="No coração de nossa comunidade, nasce o projeto Amigo da Vizinhança – uma iniciativa dedicada a fortalecer os laços que unem cada um de nós. Acreditamos que juntos podemos criar um ambiente mais solidário e acolhedor, onde a compaixão se torna a força motriz para uma comunidade mais resiliente."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginTop="250dp"
+                            android:paddingLeft="10dp"
+                            android:text="Missão"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_marginTop="280dp"
+                            android:paddingLeft="10dp"
+                            android:text="Nosso propósito é simples, mas impactante: conectar pessoas e oportunidades para fazer o bem. Queremos inspirar cada indivíduo a se tornar um voluntário ativo, contribuindo para o florescimento de nossa vizinhança."
+                            />
+                        <TextView
+                            android:text="Contato: amigodavizinhanca@contato.com"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_marginTop="390dp"
+                            android:paddingLeft="10dp" />
                         <TextView
                             android:id="@+id/versionName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
-                            android:paddingLeft="10dp"
-                            android:textColor="@color/colorWhite"/>
+                            android:layout_marginTop="410dp"
+                            android:paddingLeft="10dp" />
                     </RelativeLayout>
                 </LinearLayout>
             </ScrollView>
