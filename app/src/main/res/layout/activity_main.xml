@@ -132,17 +132,19 @@
                         android:orientation="vertical"
                         android:padding="16dp">
                         <ImageButton
+                            android:id="@+id/btnAddVaga"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/library"
+                            android:layout_marginLeft="8dp"
+                            android:src="@drawable/addvaga"
                             android:background="@android:color/transparent"
-                            android:contentDescription="Biblioteca"/>
+                            android:contentDescription="Adicionar Vaga"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Biblioteca"
+                            android:text="Adic. Vaga"
                             android:textColor="@color/textColor"
                             android:textSize="18sp"/>
                     </LinearLayout>

@@ -9,11 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import model.Vaga;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    ImageButton btnSobre;
-    ImageButton btnSair;
+    ImageButton btnSobre, btnSair, btnAddVaga;
+    Vaga vaga;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSobre.setOnClickListener(this);
         btnSair = findViewById(R.id.btnSair);
         btnSair.setOnClickListener(this);
+        btnAddVaga = findViewById(R.id.btnAddVaga);
+        btnAddVaga.setOnClickListener(this);
+
     }
 
     @Override
@@ -30,6 +36,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == btnSobre) {
             // Crie um Intent para iniciar a nova atividade
             Intent intent = new Intent(MainActivity.this, SobreActivity.class);
+            // Inicie a nova atividade
+            startActivity(intent);
+        }
+        if (v == btnAddVaga) {
+            vaga = new Vaga();
+            // Crie um Intent para iniciar a nova atividade
+            Intent intent = new Intent(MainActivity.this, CadastroDeServico.class);
+            intent.putExtra("obj", vaga);
             // Inicie a nova atividade
             startActivity(intent);
         }
