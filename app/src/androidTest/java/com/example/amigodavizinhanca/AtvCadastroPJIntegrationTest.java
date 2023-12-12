@@ -58,5 +58,4 @@ public class AtvCadastroPJIntegrationTest extends TestCase {
 
         onView(withId(R.id.btnCadastrarPj)).perform(click());
     }
-
 }

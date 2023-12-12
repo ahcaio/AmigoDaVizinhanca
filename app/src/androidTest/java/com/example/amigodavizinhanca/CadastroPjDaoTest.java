@@ -20,11 +20,6 @@ public class CadastroPjDaoTest extends TestCase {
         cadastroPjDao = new CadastroPjDao(context);
     }
 
-//    @After
-//    public void limparBanco() {
-//        cadastroPjDao.limparDados();
-//    }
-
     @Test
     public void testaInserirPessoaJuridica() {
         CadastroPJ cadastroPJTeste = new CadastroPJ();
@@ -56,6 +51,11 @@ public class CadastroPjDaoTest extends TestCase {
         assert cadastroPjDoBanco.getCpnj().equals("1223178237287312");
         assert cadastroPjDoBanco.getEmail().equals("admin@gmail.com");
         assert cadastroPjDoBanco.getCep().equals("74290-045");
+    }
+
+    @After
+    public void limparBanco() {
+        cadastroPjDao.limparDados();
     }
 
     @Test
@@ -116,7 +116,7 @@ public class CadastroPjDaoTest extends TestCase {
 
         cadastroPjDao.excluir(cadastroPJTeste1);
         List<CadastroPJ> empresasNoBancoTeste = cadastroPjDao.listar();
-        assert (empresasNoBancoTeste.isEmpty());
+        assertTrue (empresasNoBancoTeste.isEmpty());
     }
 }
 
