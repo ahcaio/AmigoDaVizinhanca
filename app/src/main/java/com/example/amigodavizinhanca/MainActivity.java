@@ -14,7 +14,7 @@ import model.Vaga;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    ImageButton btnSobre, btnSair, btnAddVaga, btnVagas;
+    ImageButton btnSobre, btnSair, btnAddVaga, btnVagas, btnCadastroPj;
     Vaga vaga;
 
 
@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAddVaga.setOnClickListener(this);
         btnVagas = findViewById(R.id.btnVagas);
         btnVagas.setOnClickListener(this);
+        btnCadastroPj= findViewById(R.id.btnCadastroPj);
+        btnCadastroPj.setOnClickListener(this);
+
     }
 
     @Override
@@ -43,6 +46,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == btnVagas) {
             // Crie um Intent para iniciar a nova atividade
             Intent intent = new Intent(MainActivity.this, ListaVagas.class);
+            // Inicie a nova atividade
+            startActivity(intent);
+        }
+        if (v == btnCadastroPj) {
+            // Crie um Intent para iniciar a nova atividade
+            Intent intent = new Intent(MainActivity.this, AtvCadastroPJ.class);
             // Inicie a nova atividade
             startActivity(intent);
         }
