@@ -11,7 +11,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import java.util.List;
 
-import Model.Vaga;
+import model.Vaga;
 
 @RunWith(AndroidJUnit4.class)
 public class VagaDaoTest {
