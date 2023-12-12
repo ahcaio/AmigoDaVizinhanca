@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tituloCadastroDeOportunidade">Cadastro de Oportunidade</string>
+    <string name="txtNome">Nome</string>
+    <string name="EdtNome">Digite aqui a oportunidade de serviço</string>
+    <string name="txtEndereco">Endereço</string>
+    <string name="edtEndereco">Digite aqui o endereço da oportunidade</string>
+    <string name="txtFone">Telefone</string>
+    <string name="edtTelefone">Digite aqui o Telefone</string>
+    <string name="txtEmail">Email</string>
+    <string name="edtEmail">Digite aqui o Email</string>
+    <string name="txtDescricao">Descrição</string>
+    <string name="edtDescricao">Digite aqui a descrição da oportunidade</string>
+    <string name="btnCadastrar">Cadastrar</string>
+    <string name="btnEditar">Editar</string>
+
+</resources>
