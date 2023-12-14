@@ -8,10 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 import bancodedados.CadastroPjDao;
 import model.CadastroPJ;
 
-public class    AtvCadastroPJ extends AppCompatActivity implements View.OnClickListener {
+public class AtvCadastroPJ extends AppCompatActivity implements View.OnClickListener {
 
     // inicializa variáveis
     Button btnCadastrarPj;
@@ -29,57 +31,65 @@ public class    AtvCadastroPJ extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_pj);
 
-        acao = getIntent().getExtras().getString("acao");
-        dao = new CadastroPjDao(this);
+        cadastroPJ = new CadastroPJ();
 
-        btnCadastrarPj = findViewById(R.id.btnCadastrarPj);
-        btnCadastrarPj.setOnClickListener(this);
+        Bundle extras = getIntent().getExtras();
+        if(extras != null) {
+            acao = getIntent().getExtras().getString("acao");
+            dao = new CadastroPjDao(this);
 
-        edtRazaoSocial = findViewById(R.id.edtRazaoSocial);
-        edtEmail = findViewById(R.id.edtEmail);
-        edtCnpj = findViewById(R.id.edtCNPJ);
-        edtCep = findViewById(R.id.edtCEP);
-        edtLogradourdo = findViewById(R.id.edtLogradouro);
-        edtLocalidade = findViewById(R.id.edtLocalidade);
-        edtUf = findViewById(R.id.edtUF);
-        edtNumero = findViewById(R.id.edtNumero);
-        edtComplemento = findViewById(R.id.edtComplemento);
+            btnCadastrarPj = findViewById(R.id.btnCadastrarPj);
+            btnCadastrarPj.setOnClickListener(this);
 
-        if (getIntent().getExtras().getSerializable("obj") != null) {
-            cadastroPJ = (CadastroPJ) (getIntent().getExtras().getSerializable("obj"));
+            edtRazaoSocial = findViewById(R.id.edtRazaoSocial);
+            edtEmail = findViewById(R.id.edtEmail);
+            edtCnpj = findViewById(R.id.edtCNPJ);
+            edtCep = findViewById(R.id.edtCEP);
+            edtLogradourdo = findViewById(R.id.edtLogradouro);
+            edtLocalidade = findViewById(R.id.edtLocalidade);
+            edtUf = findViewById(R.id.edtUF);
+            edtNumero = findViewById(R.id.edtNumero);
+            edtComplemento = findViewById(R.id.edtComplemento);
 
-            edtRazaoSocial.setText(cadastroPJ.getRazaoSocial());
-            edtCnpj.setText(cadastroPJ.getRazaoSocial());
-            edtEmail.setText(cadastroPJ.getCpnj());
-            edtCep.setText(cadastroPJ.getCep());
-            edtLogradourdo.setText(cadastroPJ.getLogradouro());
-            edtLocalidade.setText(cadastroPJ.getLocalidade());
-            edtUf.setText(cadastroPJ.getUf());
-            edtNumero.setText(cadastroPJ.getNumero());
-            edtComplemento.setText(cadastroPJ.getComplemento());
+            if (getIntent().getExtras().getSerializable("obj") != null) {
+                cadastroPJ = (CadastroPJ) (getIntent().getExtras().getSerializable("obj"));
+
+                edtRazaoSocial.setText(cadastroPJ.getRazaoSocial());
+                edtCnpj.setText(cadastroPJ.getRazaoSocial());
+                edtEmail.setText(cadastroPJ.getCpnj());
+                edtCep.setText(cadastroPJ.getCep());
+                edtLogradourdo.setText(cadastroPJ.getLogradouro());
+                edtLocalidade.setText(cadastroPJ.getLocalidade());
+                edtUf.setText(cadastroPJ.getUf());
+                edtNumero.setText(cadastroPJ.getNumero());
+                edtComplemento.setText(cadastroPJ.getComplemento());
+            }
         }
+
+
 
 
     }
 
     @Override
     public void onClick(View view) {
-        if (view == btnCadastrarPj) {
-            cadastroPJ.setRazaoSocial(edtRazaoSocial.getText().toString());
-            cadastroPJ.setCpnj(edtCnpj.getText().toString());
-            cadastroPJ.setCpnj(edtCnpj.getText().toString());
-            cadastroPJ.setEmail(edtEmail.getText().toString());
-            cadastroPJ.setCep(edtCep.getText().toString());
-            cadastroPJ.setLogradouro(edtLogradourdo.getText().toString());
-            cadastroPJ.setLocalidade(edtLocalidade.getText().toString());
-            cadastroPJ.setUf(edtUf.getText().toString());
-            cadastroPJ.setNumero(edtNumero.getText().toString());
-            cadastroPJ.setComplemento(edtComplemento.getText().toString());
-            long id = dao.inserir(cadastroPJ);
-            Toast.makeText(this, "Instituição" + cadastroPJ.getId() + "foi inserida com sucesso",
-                    Toast.LENGTH_LONG).show();
+        if (view.getId() == R.id.btnCadastrarPj) {
+            if ("inserir".equals(acao)) {
+                cadastroPJ.setRazaoSocial(edtRazaoSocial.getText().toString());
+                cadastroPJ.setCpnj(edtCnpj.getText().toString());
+                cadastroPJ.setEmail(edtEmail.getText().toString());
+                cadastroPJ.setCep(edtCep.getText().toString());
+                cadastroPJ.setLogradouro(edtLogradourdo.getText().toString());
+                cadastroPJ.setLocalidade(edtLocalidade.getText().toString());
+                cadastroPJ.setUf(edtUf.getText().toString());
+                cadastroPJ.setNumero(edtNumero.getText().toString());
+                cadastroPJ.setComplemento(edtComplemento.getText().toString());
+                long id = dao.inserir(cadastroPJ);
+                Toast.makeText(this, "Instituição" + cadastroPJ.getId() + "foi inserida com sucesso",
+                        Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Teste", Toast.LENGTH_SHORT).show();
+            }
         }
-
-
     }
 }
