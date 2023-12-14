@@ -11,10 +11,11 @@ import android.widget.Toast;
 import bancodedados.CadastroPjDao;
 import model.CadastroPJ;
 
-public class AtvCadastroPJ extends AppCompatActivity implements View.OnClickListener {
+public class    AtvCadastroPJ extends AppCompatActivity implements View.OnClickListener {
 
     // inicializa variáveis
     Button btnCadastrarPj;
+    Button btnEditarPj;
 
     EditText edtRazaoSocial, edtEmail, edtCnpj, edtCep, edtLogradourdo, edtLocalidade,
             edtUf, edtNumero, edtComplemento;
@@ -30,17 +31,19 @@ public class AtvCadastroPJ extends AppCompatActivity implements View.OnClickList
 
         acao = getIntent().getExtras().getString("acao");
         dao = new CadastroPjDao(this);
-        btnCadastrarPj = findViewById(R.id.btnCadastrar);
+
+        btnCadastrarPj = findViewById(R.id.btnCadastrarPj);
         btnCadastrarPj.setOnClickListener(this);
-        edtRazaoSocial = findViewById(R.id.edtNomeVaga);
+
+        edtRazaoSocial = findViewById(R.id.edtRazaoSocial);
         edtEmail = findViewById(R.id.edtEmail);
-//        edtCnpj = findViewById(R.id.edtCNPJ);
-//        edtCep = findViewById(R.id.edtCEP);
-//        edtLogradourdo = findViewById(R.id.edtLogradouro);
-//        edtLocalidade = findViewById(R.id.edtLocalidade);
-//        edtUf = findViewById(R.id.edtUF);
-//        edtNumero = findViewById(R.id.edtNumero);
-//        edtComplemento = findViewById(R.id.edtComplemento);
+        edtCnpj = findViewById(R.id.edtCNPJ);
+        edtCep = findViewById(R.id.edtCEP);
+        edtLogradourdo = findViewById(R.id.edtLogradouro);
+        edtLocalidade = findViewById(R.id.edtLocalidade);
+        edtUf = findViewById(R.id.edtUF);
+        edtNumero = findViewById(R.id.edtNumero);
+        edtComplemento = findViewById(R.id.edtComplemento);
 
         if (getIntent().getExtras().getSerializable("obj") != null) {
             cadastroPJ = (CadastroPJ) (getIntent().getExtras().getSerializable("obj"));

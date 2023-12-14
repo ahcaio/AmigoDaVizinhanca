@@ -1,196 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtNome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/txtRazaoSocial" />
-
-        <EditText
-            android:id="@+id/edtNomeVaga"
-            android:layout_width="333sp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:hint="@string/EdtRazaoSocial"
-            android:inputType="textMultiLine"
-            android:lines="1"
-            android:maxLines="5"
-            android:scrollbars="vertical"
-
-            />
-
-        <TextView
-            android:id="@+id/txtEndereco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/txtEndereco" />
-
-        <EditText
-            android:id="@+id/edtEndereco"
-            android:layout_width="333sp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:hint="@string/edtEndereco"
-            android:inputType="textPostalAddress" />
-
-        <TextView
-            android:id="@+id/txtFone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/txtFone" />
-
-        <EditText
-            android:id="@+id/edtFone"
-            android:layout_width="333sp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:digits="0123456789-()"
-            android:ems="10"
-            android:hint="@string/edtTelefone"
-            android:inputType="number"
-            android:maxLength="11" />
-
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/txtEmail" />
-
-        <EditText
-            android:id="@+id/edtEmail"
-            android:layout_width="333sp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:hint="@string/edtEmail"
-            android:inputType="textEmailAddress" />
-
-        <TextView
-            android:id="@+id/txtDescricao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/txtDescricao" />
-
-        <EditText
-            android:id="@+id/edtDescricao"
-            android:layout_width="333sp"
-            android:layout_height="82dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:gravity="bottom"
-            android:hint="@string/edtDescricao"
-            android:inputType="textMultiLine"
-            android:lines="3"
-            android:maxLines="5"
-            android:scrollbars="vertical" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
-
-            <Button
-                android:id="@+id/btnCadastrar"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="33dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="95dp"
-                android:layout_marginBottom="48dp"
-                android:fontFamily="@font/roboto"
-                android:text="@string/btnCadastrar" />
-
-            <Button
-                android:id="@+id/btnEditar"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="47dp"
-                android:layout_marginBottom="48dp"
-                android:text="@string/btnEditar" />
-        </LinearLayout>
-
-    </LinearLayout>
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="136dp"
-        android:animateLayoutChanges="false"
-        android:background="@drawable/toolbar_header">
-
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:text="@string/tituloCadastroDeInstituicao"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp" />
+        android:layout_height="84dp"
+        android:background="@drawable/toolbar_header" />
 
 
-    </androidx.appcompat.widget.Toolbar>
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".AtvCadastroPJ">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+
+        <EditText
+            android:id="@+id/edtRazaoSocial"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal">
+            android:autofillHints="text"
+            android:ems="10"
+            android:hint="@string/nome"
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:foregroundGravity="center"
-                android:gravity="center">
+            android:inputType="text" />
 
-                <TextView
-                    android:layout_width="329dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:text="Amigo da Vizinhança"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="25sp" />
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="text"
+            tools:ignore="TextFields" />
 
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/edtCNPJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="string"
+            android:ems="10"
+            android:hint="@string/edtCnpj"
+            android:inputType="number" />
+
+
+        <EditText
+            android:id="@+id/edtCEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="String"
+            android:ems="10"
+            android:hint="@string/cep"
+            android:inputType="textPostalAddress" />
+
+        <EditText
+            android:id="@+id/edtLogradouro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="String"
+            android:ems="10"
+            android:hint="@string/logradouro"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edtLocalidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="String"
+            android:ems="20"
+            android:hint="@string/localidade"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edtUF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="String"
+            android:ems="10"
+            android:hint="@string/uf"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edtNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="text"
+            android:ems="10"
+            android:hint="@string/numero"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edtComplemento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="text"
+            android:ems="10"
+            android:hint="@string/complemento"
+            android:inputType="text" />
+
+
+        <Button
+            android:id="@+id/btnCadastrarPj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ClickSalvar"
+            android:text="@string/btnCadastrarPj" />
+    </LinearLayout>
+</LinearLayout>
