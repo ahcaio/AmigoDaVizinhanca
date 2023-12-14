@@ -20,3 +20,5 @@ app/src/main/res/layout/activity_cadastro_pf.xml
 
 /.idea/androidTestResultsUserPreferences.xml
 /.idea/shelf/
+/.idea/migrations.xml
+/.idea/deploymentTargetDropDown.xml
